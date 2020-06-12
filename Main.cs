@@ -19,8 +19,41 @@ namespace DeliveryDate
     {
         public Main()
         {
-            InitializeComponent();
+   //         InitializeComponent();
+
+            var goalSeekResult = GoalSeek.TrySeek(Calculate);
+
+            if (goalSeekResult.IsGoalReached == true)
+            {
+                decimal calcTargetValue = goalSeekResult.TargetValue;
+                decimal calcAccuracyLevel = goalSeekResult.AccucracyLevel;
+                int calcIterations = goalSeekResult.Iterations;
+                bool calcGoalReached = goalSeekResult.IsGoalReached;
+                decimal calcClosestValue = goalSeekResult.ClosestValue;
+            }
+            else
+            {
+                decimal calcTargetValue = goalSeekResult.TargetValue;
+                decimal calcAccuracyLevel = goalSeekResult.AccucracyLevel;
+                int calcIterations = goalSeekResult.Iterations;
+                bool calcGoalReached = goalSeekResult.IsGoalReached;
+                decimal calcClosestValue = goalSeekResult.ClosestValue;
+            }
         }
+
+        
+        public decimal Calculate(decimal x) {
+            return 12 * x - 9;
+        }
+
+        
+
+
+
+
+        // Ignore everything after this
+
+
 
         private string sSQL, sEmail, sData, sLSR, sLSREmail;
         ArrayList agentsList = new ArrayList();

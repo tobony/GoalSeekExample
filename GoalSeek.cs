@@ -14,10 +14,14 @@ namespace DeliveryDate
         public int MaxIterations { get; set; }
         [System.ComponentModel.DefaultValue(DefaultResultRoundOff)]
         public bool ResultRoundOff { get; set; }
-        [System.ComponentModel.DefaultValue(DefaultAccuracyLevel)]
-        public List<decimal> AccuracyLevels { get; }
+        public List<decimal> AccuracyLevels = new List<decimal> { DefaultAccuracyLevel };
 
         private readonly Func<decimal, decimal> func;
+
+        public List<decimal> getAccuracyLevels()
+        {
+            return AccuracyLevels;
+        }
 
         public GoalSeek(IGoalSeek iGoalSeek)
         {
